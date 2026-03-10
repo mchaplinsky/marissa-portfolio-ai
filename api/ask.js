@@ -53,8 +53,8 @@ export default async function handler(req, res) {
     const data = JSON.parse(raw);
 
     const answer =
-      data.output_text ||
-      "Sorry, I couldn't generate an answer.";
+  data.output?.[0]?.content?.[0]?.text ||
+  "Sorry, I couldn't generate an answer.";
 
     return res.status(200).json({ answer });
   } catch (error) {
