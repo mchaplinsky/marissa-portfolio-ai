@@ -8,7 +8,7 @@
 \f0\fs24 \cf0 \{\
   "functions": \{\
     "api/ask.js": \{\
-      "runtime": "nodejs20.x"\
+      "maxDuration": 10\
     \}\
   \}\
 \}}
