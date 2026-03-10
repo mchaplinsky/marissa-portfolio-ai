@@ -31,7 +31,33 @@ export default async function handler(req, res) {
         input: [
           {
             role: "system",
-            content: portfolioContext,
+            content: `
+You are an AI assistant for Marissa Chaplinsky's portfolio.
+
+Use only the portfolio context below to answer.
+Then generate exactly 4 short follow-up questions that are specific to the user's question and your answer.
+
+Return your output as valid JSON only in this format:
+{
+  "answer": "string",
+  "followUpSuggestions": [
+    "string",
+    "string",
+    "string",
+    "string"
+  ]
+}
+
+Rules:
+- Do not invent facts.
+- Keep the answer concise, polished, and recruiter-friendly.
+- Make follow-up questions specific and useful.
+- Follow-up questions should sound natural and help a recruiter explore relevant experience.
+- Return JSON only. No markdown.
+
+Portfolio context:
+${portfolioContext}
+            `,
           },
           {
             role: "user",
@@ -51,12 +77,24 @@ export default async function handler(req, res) {
     }
 
     const data = JSON.parse(raw);
+    const text = data.output_text || "";
 
-    const answer =
-  data.output?.[0]?.content?.[0]?.text ||
-  "Sorry, I couldn't generate an answer.";
+    let parsed;
+    try {
+      parsed = JSON.parse(text);
+    } catch (e) {
+      console.error("JSON_PARSE_ERROR", text);
+      return res.status(500).json({
+        error: "Could not parse AI response JSON.",
+      });
+    }
 
-    return res.status(200).json({ answer });
+    return res.status(200).json({
+      answer: parsed.answer || "Sorry, I couldn't generate an answer.",
+      followUpSuggestions: Array.isArray(parsed.followUpSuggestions)
+        ? parsed.followUpSuggestions.slice(0, 4)
+        : [],
+    });
   } catch (error) {
     console.error("ASK_API_ERROR", error);
     return res.status(500).json({
