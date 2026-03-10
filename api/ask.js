@@ -1,9 +1,4 @@
-import OpenAI from "openai";
 import { portfolioContext } from "../portfolioContext.js";
-
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
 
 export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -25,30 +20,47 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "A question is required." });
     }
 
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
-      temperature: 0.4,
-      messages: [
-        {
-          role: "system",
-          content: portfolioContext,
-        },
-        {
-          role: "user",
-          content: question,
-        },
-      ],
+    const openaiRes = await fetch("https://api.openai.com/v1/responses", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: "gpt-4.1-mini",
+        input: [
+          {
+            role: "system",
+            content: portfolioContext,
+          },
+          {
+            role: "user",
+            content: question,
+          },
+        ],
+      }),
     });
 
+    const raw = await openaiRes.text();
+
+    if (!openaiRes.ok) {
+      console.error("OPENAI_RAW_ERROR", raw);
+      return res.status(openaiRes.status).json({
+        error: raw,
+      });
+    }
+
+    const data = JSON.parse(raw);
+
     const answer =
-      completion.choices?.[0]?.message?.content?.trim() ||
+      data.output_text ||
       "Sorry, I couldn't generate an answer.";
 
     return res.status(200).json({ answer });
   } catch (error) {
     console.error("ASK_API_ERROR", error);
     return res.status(500).json({
-      error: "Something went wrong while generating the answer.",
+      error: String(error),
     });
   }
 }
