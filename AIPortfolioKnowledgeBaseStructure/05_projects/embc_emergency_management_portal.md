@@ -1,42 +1,61 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2758
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+# EMBC Emergency Management Portal
 
-\f0\fs24 \cf0 # EMBC Emergency Management Portal\
-\
-## Project Overview\
-The EMBC portal project focused on designing digital platforms used during emergency management situations in British Columbia.\
-\
-## Industry\
-Government / Emergency Response\
-\
-## Organization\
-Emergency Management BC\
-\
-## My Role\
-Senior UX Designer\
-\
-## Project Scope\
-Design responder portals, evacuee portals, and operational workflows used by staff and emergency responders.\
-\
-## Problem\
-Existing tools lacked clarity and efficiency for managing emergency response processes.\
-\
-## Users\
-Emergency responders  \
-Government staff  \
-Evacuees\
-\
-## Design Strategy\
-Design role-based portals that allow users to access relevant information and workflows quickly during emergencies.\
-\
-## Deliverables\
-Wireframes  \
-Process maps  \
-User workflows\
-\
-## Impact\
-Improved clarity of emergency response workflows}
+## Project Overview
+The EMBC portal project focused on designing digital platforms used during emergency management situations in British Columbia. The system supports emergency responders, government staff, and evacuees during disaster response operations.
+
+## Industry
+Government / Emergency Response
+
+## Organization
+Emergency Management BC
+
+## My Role
+Senior UX Designer
+
+## Project Scope
+Design responder portals, evacuee portals, and operational workflows used by staff and emergency responders to manage emergency response processes.
+
+## Problem
+Existing tools lacked clarity and efficiency for managing emergency response workflows. During high-pressure emergency situations, responders and staff needed systems that allowed them to quickly access information and complete critical tasks without confusion.
+
+## Users
+- Emergency responders  
+- Government staff  
+- Evacuees  
+
+## Design Strategy
+Design role-based portals that allow each user group to quickly access relevant information, services, and workflows during emergency situations.
+
+The system focused on improving clarity, reducing friction in operational processes, and ensuring critical information could be accessed quickly when needed.
+
+## Systems Thinking
+Emergency response systems involve multiple stakeholders and interconnected processes. The platform needed to support coordination between responders, administrative staff, and evacuees while maintaining clear operational workflows during high-pressure situations.
+
+## Deliverables
+- Wireframes  
+- Process maps  
+- User workflow documentation  
+
+## Tools Used
+- Figma  
+- Process mapping tools  
+
+## Business Impact
+- Improved clarity and usability of emergency response workflows  
+- Helped emergency staff access critical operational information more efficiently  
+- Supported coordination between multiple stakeholders during emergency response operations  
+
+## Impact
+- Improved visibility of emergency response processes  
+- Introduced clearer operational workflows for responders and government staff  
+
+## Key Skills Demonstrated
+- Government service design  
+- Complex workflow design  
+- Multi-role system design  
+- Systems thinking  
+
+## Questions This File Helps Answer
+- Has Marissa designed systems used in emergency response environments?  
+- Does Marissa have experience designing complex government platforms?  
+- Has Marissa worked on systems used by multiple operational stakeholders?
