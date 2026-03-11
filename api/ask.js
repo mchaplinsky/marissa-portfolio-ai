@@ -1,4 +1,36 @@
-import { portfolioContext } from "../portfolioContext.js";
+import OpenAI from "openai";
+import { getPortfolioContext } from "../portfolioContext.js";
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
+function extractJson(text) {
+  if (!text || typeof text !== "string") return null;
+
+  const trimmed = text.trim();
+
+  try {
+    return JSON.parse(trimmed);
+  } catch {}
+
+  const fencedMatch = trimmed.match(/```json\s*([\s\S]*?)\s*```/i);
+  if (fencedMatch?.[1]) {
+    try {
+      return JSON.parse(fencedMatch[1]);
+    } catch {}
+  }
+
+  const firstBrace = trimmed.indexOf("{");
+  const lastBrace = trimmed.lastIndexOf("}");
+  if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
+    try {
+      return JSON.parse(trimmed.slice(firstBrace, lastBrace + 1));
+    } catch {}
+  }
+
+  return null;
+}
 
 export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -20,85 +52,85 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "A question is required." });
     }
 
-    const openaiRes = await fetch("https://api.openai.com/v1/responses", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`,
-      },
-      body: JSON.stringify({
-        model: "gpt-4.1-mini",
-        input: [
-          {
-            role: "system",
-            content: `
+    const portfolioContext = getPortfolioContext();
+
+    const response = await openai.responses.create({
+      model: "gpt-4.1-mini",
+      input: [
+        {
+          role: "system",
+          content: `
 You are an AI assistant for Marissa Chaplinsky's portfolio.
 
-Use only the portfolio context below to answer.
-Then generate exactly 4 short follow-up questions that are specific to the user's question and your answer.
+Use only the portfolio knowledge below to answer.
+If the answer is not clearly supported by the knowledge base, say that directly instead of guessing.
 
-Return your output as valid JSON only in this format:
+Keep answers:
+- clear
+- warm
+- concise
+- specific
+- grounded in Marissa's actual work
+
+Prioritize these themes when relevant:
+- AI product design
+- complex systems
+- enterprise and operational platforms
+- healthcare and government experience
+- research-driven design
+- cross-functional collaboration
+
+Return ONLY valid JSON.
+Do not use markdown.
+Do not wrap in backticks.
+Do not add any text before or after the JSON.
+
+Use exactly this shape:
 {
   "answer": "string",
-  "followUpSuggestions": [
-    "string",
-    "string",
-    "string",
-    "string"
-  ]
+  "suggestedQuestions": ["string", "string", "string"]
 }
 
 Rules:
-- Do not invent facts.
-- Keep the answer concise, polished, and recruiter-friendly.
-- Make follow-up questions specific and useful.
-- Follow-up questions should sound natural and help a recruiter explore relevant experience.
-- Return JSON only. No markdown.
+- "answer" must be a plain string
+- "suggestedQuestions" must contain exactly 3 short follow-up questions
+- each suggested question should be relevant to the user's last question
+- do not invent facts outside the portfolio knowledge base
 
-Portfolio context:
+Portfolio Knowledge Base:
 ${portfolioContext}
-            `,
-          },
-          {
-            role: "user",
-            content: question,
-          },
-        ],
-      }),
+          `,
+        },
+        {
+          role: "user",
+          content: question,
+        },
+      ],
     });
 
-    const raw = await openaiRes.text();
+    const rawText =
+      response.output_text || "";
 
-    if (!openaiRes.ok) {
-      console.error("OPENAI_RAW_ERROR", raw);
-      return res.status(openaiRes.status).json({
-        error: raw,
-      });
-    }
+    const parsed = extractJson(rawText);
 
-    const data = JSON.parse(raw);
-    const text = data.output_text || "";
-
-    let parsed;
-    try {
-      parsed = JSON.parse(text);
-    } catch (e) {
-      console.error("JSON_PARSE_ERROR", text);
-      return res.status(500).json({
-        error: "Could not parse AI response JSON.",
+    if (!parsed) {
+      return res.status(200).json({
+        answer: rawText || "Sorry, I couldn't generate a response.",
+        suggestedQuestions: [],
       });
     }
 
     return res.status(200).json({
-      answer: parsed.answer || "Sorry, I couldn't generate an answer.",
-      followUpSuggestions: Array.isArray(parsed.followUpSuggestions)
-        ? parsed.followUpSuggestions.slice(0, 4)
+      answer:
+        typeof parsed.answer === "string"
+          ? parsed.answer
+          : "Sorry, I couldn't generate a response.",
+      suggestedQuestions: Array.isArray(parsed.suggestedQuestions)
+        ? parsed.suggestedQuestions.slice(0, 3)
         : [],
     });
   } catch (error) {
-    console.error("ASK_API_ERROR", error);
-    return res.status(500).json({
-      error: String(error),
-    });
+    console.error("Ask API error:", error);
+    return res.status(500).json({ error: "Something went wrong." });
   }
 }
