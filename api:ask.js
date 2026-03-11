@@ -5,6 +5,33 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+function extractJson(text) {
+  if (!text || typeof text !== "string") return null;
+
+  const trimmed = text.trim();
+
+  try {
+    return JSON.parse(trimmed);
+  } catch {}
+
+  const fencedMatch = trimmed.match(/```json\s*([\s\S]*?)\s*```/i);
+  if (fencedMatch?.[1]) {
+    try {
+      return JSON.parse(fencedMatch[1]);
+    } catch {}
+  }
+
+  const firstBrace = trimmed.indexOf("{");
+  const lastBrace = trimmed.lastIndexOf("}");
+  if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
+    try {
+      return JSON.parse(trimmed.slice(firstBrace, lastBrace + 1));
+    } catch {}
+  }
+
+  return null;
+}
+
 export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
@@ -53,6 +80,23 @@ Prioritize these themes when relevant:
 - research-driven design
 - cross-functional collaboration
 
+Return ONLY valid JSON.
+Do not use markdown.
+Do not wrap in backticks.
+Do not add any text before or after the JSON.
+
+Use exactly this shape:
+{
+  "answer": "string",
+  "suggestedQuestions": ["string", "string", "string"]
+}
+
+Rules:
+- "answer" must be a plain string
+- "suggestedQuestions" must contain exactly 3 short follow-up questions
+- each suggested question should be relevant to the user's last question
+- do not invent facts outside the portfolio knowledge base
+
 Portfolio Knowledge Base:
 ${portfolioContext}
           `,
@@ -64,10 +108,27 @@ ${portfolioContext}
       ],
     });
 
-    const answer =
-      response.output_text || "Sorry, I couldn't generate a response.";
+    const rawText =
+      response.output_text || "";
 
-    return res.status(200).json({ answer });
+    const parsed = extractJson(rawText);
+
+    if (!parsed) {
+      return res.status(200).json({
+        answer: rawText || "Sorry, I couldn't generate a response.",
+        suggestedQuestions: [],
+      });
+    }
+
+    return res.status(200).json({
+      answer:
+        typeof parsed.answer === "string"
+          ? parsed.answer
+          : "Sorry, I couldn't generate a response.",
+      suggestedQuestions: Array.isArray(parsed.suggestedQuestions)
+        ? parsed.suggestedQuestions.slice(0, 3)
+        : [],
+    });
   } catch (error) {
     console.error("Ask API error:", error);
     return res.status(500).json({ error: "Something went wrong." });
