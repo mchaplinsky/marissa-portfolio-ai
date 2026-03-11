@@ -1,71 +1,128 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2758
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+# AI Behavior Design
 
-\f0\fs24 \cf0 # AI Behavior Design\
-\
-AI behavior design focuses on defining how an intelligent system interacts with users and responds to different situations.\
-\
-Unlike traditional interfaces, AI systems must interpret inputs, generate outputs, and adapt to context. This requires careful design of system behavior to ensure interactions remain predictable and understandable.\
-\
-Marissa approaches AI behavior design by defining how the system should respond across a range of user scenarios.\
-\
----\
-\
-## Designing AI Interaction Patterns\
-\
-AI systems often operate through interaction patterns that guide user engagement.\
-\
-Common patterns include:\
-\
-\'95 suggestion-based assistance  \
-\'95 guided workflows  \
-\'95 conversational interactions\
-\
-These patterns help users understand how to interact with the system.\
-\
----\
-\
-## Modeling AI Responses\
-\
-AI responses must be structured so users can easily interpret and act on them.\
-\
-Marissa designs responses that are:\
-\
-\'95 concise  \
-\'95 actionable  \
-\'95 easy to understand\
-\
-Clear responses help reduce confusion and increase user confidence.\
-\
----\
-\
-## Handling User Intent\
-\
-AI systems must interpret user intent from inputs such as text, actions, or uploaded content.\
-\
-Behavior design ensures the system responds appropriately to different types of intent while maintaining consistent interaction patterns.\
-\
----\
-\
-## Managing System Feedback\
-\
-AI interactions must provide clear feedback to users about what the system is doing.\
-\
-Examples include:\
-\
-\'95 processing indicators  \
-\'95 explanation messages  \
-\'95 suggested actions\
-\
-Feedback helps users remain oriented during AI interactions.\
-\
----\
-\
-## Questions this file helps answer\
-\
-How does Marissa design AI behavior?  \
-How does Marissa structure AI interactions?}
+AI behavior design focuses on defining how an intelligent system interacts with users and responds to different situations.
+
+Unlike traditional interfaces that rely on static interactions, AI systems must interpret user inputs, generate outputs, and adapt responses based on context. Designing these systems requires careful planning of system behavior so interactions remain understandable, predictable, and trustworthy.
+
+Marissa approaches AI behavior design by modeling how the system should respond across a wide range of user scenarios, ensuring the system supports users while maintaining transparency and control.
+
+---
+
+## Designing AI Interaction Patterns
+
+AI systems rely on interaction patterns that help users understand how the system behaves and how they can engage with it.
+
+Common AI interaction patterns include:
+
+- suggestion-based assistance  
+- guided workflows  
+- conversational interactions  
+- automated content generation  
+
+These patterns help establish clear expectations about what the system can do and how users can interact with it.
+
+Designing these patterns requires balancing automation with user control so that AI supports the workflow rather than disrupting it.
+
+---
+
+## Modeling AI Responses
+
+AI responses must be structured in ways that users can easily interpret and act on.
+
+Marissa designs AI responses that are:
+
+- concise  
+- actionable  
+- context-aware  
+- aligned with user intent  
+
+Responses should guide users toward next steps rather than simply providing information.
+
+For example, AI-generated suggestions often include clear options that allow users to accept, modify, or reject the system's output.
+
+This approach keeps the user in control while still benefiting from automation.
+
+---
+
+## Handling User Intent
+
+AI systems must interpret user intent from a variety of inputs such as text prompts, interface actions, or uploaded content.
+
+Behavior design ensures that the system responds appropriately to different types of intent while maintaining consistent interaction patterns.
+
+This includes defining how the system should behave when:
+
+- the user request is clear and actionable  
+- the user request is ambiguous  
+- the system lacks enough information to respond confidently  
+
+Clear intent handling prevents confusing or misleading AI responses.
+
+---
+
+## Guardrails and System Constraints
+
+AI systems must operate within defined constraints to ensure outputs remain reliable and safe.
+
+Marissa incorporates guardrails that guide system behavior and prevent undesirable outcomes.
+
+Examples include:
+
+- preventing invalid or low-quality outputs  
+- enforcing production constraints such as print requirements  
+- restricting unsupported actions  
+
+These guardrails ensure the system remains predictable and aligned with product requirements.
+
+---
+
+## Managing System Feedback
+
+AI interactions must provide clear feedback so users understand what the system is doing.
+
+Examples of feedback include:
+
+- processing indicators while AI generates results  
+- explanation messages that clarify system decisions  
+- suggestions for next actions  
+
+Providing this feedback helps users remain oriented and reduces uncertainty during AI interactions.
+
+---
+
+## Explainability and User Trust
+
+Trust is a critical component of AI interactions.
+
+Marissa designs AI experiences that help users understand why the system produced a particular result.
+
+This can include:
+
+- explaining how inputs influenced generated outputs  
+- highlighting system reasoning when possible  
+- allowing users to review and modify AI-generated content  
+
+Explainability helps users feel confident using AI-powered tools.
+
+---
+
+## Human–AI Collaboration
+
+A key principle in Marissa’s AI design approach is maintaining a collaborative relationship between users and intelligent systems.
+
+Rather than replacing user decisions, AI systems should assist users by:
+
+- accelerating repetitive tasks  
+- generating starting points for creative work  
+- providing contextual guidance  
+
+Users remain responsible for final decisions while the system provides intelligent support.
+
+---
+
+## Questions This File Helps Answer
+
+How does Marissa design AI behavior?  
+How does Marissa structure AI interactions?  
+How does Marissa design human–AI collaboration systems?  
+How does Marissa incorporate guardrails and transparency into AI experiences?
