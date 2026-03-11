@@ -1,52 +1,64 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2758
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+# Data Mapping Framework (DMF)
 
-\f0\fs24 \cf0 # Data Mapping Framework (DMF)\
-\
-## Project Overview\
-The Data Mapping Framework project focused on mapping how data flows across the Ministry of Education\'92s childcare and education systems.\
-\
-## Industry\
-Education / Government\
-\
-## Organization\
-BC Ministry of Education\
-\
-## My Role\
-Senior UX Designer\
-\
-## Project Scope\
-Conduct large-scale research into how datasets are collected, managed, shared, and used across the ministry.\
-\
-## Problem\
-Government staff lacked a centralized understanding of how data moved across systems and departments.\
-\
-## Users\
-Ministry analysts  \
-Policy teams  \
-Education administrators\
-\
-## Research Methods\
-100+ user interviews  \
-Dataset analysis  \
-Data lifecycle mapping\
-\
-## Design Strategy\
-Create visual journey maps and an interactive data glossary to help stakeholders understand data systems.\
-\
-## Deliverables\
-55+ data journey maps  \
-Interactive data glossary  \
-Research documentation\
-\
-## Tools Used\
-Mural  \
-Axure RP\
-\
-## Impact\
-Improved transparency of government data systems  \
-Helped stakeholders understand complex data workflows}
+## Project Overview
+The Data Mapping Framework project focused on understanding how data flows across the Ministry of Education’s childcare and education systems. The work mapped how datasets are collected, managed, shared, and used across multiple departments within the ministry.
+
+## Industry
+Education / Government
+
+## Organization
+BC Ministry of Education
+
+## My Role
+Senior UX Designer
+
+## Project Scope
+Conduct large-scale research into how datasets are collected, managed, shared, and used across the ministry, and create visual frameworks that help stakeholders understand complex data ecosystems.
+
+## Problem
+Government staff lacked a centralized understanding of how data moved across systems and departments. This made it difficult for analysts, policy teams, and administrators to understand how datasets were connected and how information flowed across the ministry.
+
+## Users
+- Ministry analysts  
+- Policy teams  
+- Education administrators  
+
+## Research Methods
+- 100+ stakeholder interviews  
+- Dataset analysis  
+- Data lifecycle mapping  
+
+## Design Strategy
+Create visual data journey maps and an interactive data glossary that help stakeholders understand how data moves across systems, departments, and operational workflows.
+
+## Systems Thinking
+The project required analyzing complex data relationships across multiple government systems. Rather than focusing on a single platform, the work mapped the broader ecosystem of how information is collected, processed, and shared across the ministry.
+
+## Deliverables
+- 55+ data journey maps  
+- Interactive data glossary  
+- Research and system documentation  
+
+## Tools Used
+- Mural  
+- Axure RP  
+
+## Business Impact
+- Improved transparency of government data systems  
+- Enabled ministry stakeholders to understand complex data relationships  
+- Provided a shared framework for discussing and managing data workflows  
+
+## Impact
+- Helped analysts and policy teams better understand how datasets move across ministry systems  
+- Created visual tools that simplified complex data workflows  
+
+## Key Skills Demonstrated
+- Systems thinking  
+- Complex ecosystem mapping  
+- Government service design  
+- Research synthesis  
+
+## Questions This File Helps Answer
+- Has Marissa worked on government data systems?  
+- Does Marissa have experience mapping complex systems or data ecosystems?  
+- Has Marissa conducted large-scale research projects involving multiple stakeholders?
