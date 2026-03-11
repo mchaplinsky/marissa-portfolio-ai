@@ -1,149 +1,142 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2758
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+# User Research Methods
 
-\f0\fs24 \cf0 # User Research Methods\
-\
-Marissa Chaplinsky uses user research to understand behavior, identify product opportunities, and guide design decisions. Her research approach combines qualitative insights, behavioral data, and product analytics to uncover how users interact with systems and where improvements can create meaningful impact.\
-\
-Rather than treating research as a standalone activity, Marissa integrates research throughout the product design process to ensure that solutions remain grounded in real user needs and product realities.\
-\
----\
-\
-## Discovery Research\
-\
-Early in a project, Marissa often conducts discovery research to understand the broader problem space and the context in which users interact with a product.\
-\
-Discovery research helps identify user motivations, workflows, and pain points that shape the direction of design solutions.\
-\
-Methods commonly used include:\
-\
-\'95 stakeholder interviews  \
-\'95 user interviews  \
-\'95 product walkthroughs  \
-\'95 competitor and market analysis  \
-\'95 current state product reviews  \
-\
-These insights help teams frame the right problems and identify opportunities for improvement.\
-\
----\
-\
-## Usability Testing\
-\
-Usability testing helps evaluate how effectively users can complete tasks within a product.\
-\
-Marissa uses usability testing to observe user behavior, identify friction points, and evaluate how design changes affect usability.\
-\
-This process often includes:\
-\
-\'95 task-based usability testing  \
-\'95 moderated user sessions  \
-\'95 testing prototypes or existing interfaces  \
-\'95 analyzing task completion challenges  \
-\
-Usability testing helps validate design solutions and ensures that complex workflows remain understandable and efficient.\
-\
----\
-\
-## Behavioral Data and Analytics\
-\
-Understanding how users actually interact with a product often requires analyzing behavioral data.\
-\
-Marissa frequently reviews analytics to identify patterns such as:\
-\
-\'95 feature adoption trends  \
-\'95 user drop-off points  \
-\'95 navigation behavior  \
-\'95 engagement patterns  \
-\
-These insights help teams identify areas where users struggle or where improvements could significantly improve the experience.\
-\
----\
-\
-## Heuristic Evaluation\
-\
-Heuristic evaluation involves reviewing products against established usability principles to identify potential issues and improvement opportunities.\
-\
-Marissa uses heuristic analysis to evaluate:\
-\
-\'95 navigation clarity  \
-\'95 interaction consistency  \
-\'95 system feedback  \
-\'95 information hierarchy  \
-\
-This method allows teams to quickly identify usability concerns even before conducting formal testing.\
-\
----\
-\
-## Accessibility Reviews\
-\
-Accessibility research ensures that digital products are usable by people with diverse abilities and needs.\
-\
-Marissa frequently conducts accessibility-focused reviews that evaluate:\
-\
-\'95 readability and visual hierarchy  \
-\'95 color contrast and interface clarity  \
-\'95 navigation structure  \
-\'95 interaction patterns  \
-\
-These reviews help ensure products remain inclusive and usable across a wide range of users and environments.\
-\
----\
-\
-## Customer Support and Feedback Analysis\
-\
-Customer support data can reveal recurring usability issues that may not appear in traditional research.\
-\
-Marissa often analyzes support logs and customer feedback to identify patterns such as:\
-\
-\'95 frequently asked questions  \
-\'95 recurring usability challenges  \
-\'95 common user frustrations  \
-\
-These insights help teams prioritize improvements that directly impact user experience.\
-\
----\
-\
-## Journey Mapping and Experience Mapping\
-\
-Understanding the broader context of a product often requires mapping the entire user journey.\
-\
-Marissa frequently creates journey maps and experience maps that illustrate how users move through different stages of an interaction or service.\
-\
-These maps help teams understand:\
-\
-\'95 key user goals  \
-\'95 emotional friction points  \
-\'95 system touchpoints  \
-\'95 opportunities for improvement  \
-\
-Journey mapping is especially valuable in complex systems involving multiple steps or stakeholders.\
-\
----\
-\
-## Synthesizing Research Into Product Insights\
-\
-Research is most valuable when it translates into actionable insights.\
-\
-Marissa synthesizes research findings into clear product recommendations by:\
-\
-\'95 identifying patterns across multiple research sources  \
-\'95 highlighting usability challenges  \
-\'95 mapping opportunities for improvement  \
-\'95 translating insights into design direction  \
-\
-This process helps teams move from raw research data to clear product decisions.\
-\
----\
-\
-## Questions this file helps answer\
-\
-What user research methods does Marissa Chaplinsky use?  \
-How does Marissa conduct UX research?  \
-Does Marissa use analytics and behavioral data in research?  \
-How does Marissa validate design decisions?  \
-What role does research play in Marissa\'92s design process?  \
-Does Marissa conduct usability testing and accessibility reviews?}
+Marissa Chaplinsky uses user research to understand behavior, uncover product opportunities, and guide design decisions. Her research approach combines qualitative insights, behavioral data, and product analytics to develop a deep understanding of how users interact with systems and where meaningful improvements can be made.
+
+Rather than treating research as a standalone phase, Marissa integrates research throughout the product design process. This allows teams to continuously validate assumptions, refine solutions, and ensure that design decisions remain grounded in real user needs and product realities.
+
+---
+
+## Discovery Research
+
+At the beginning of a project, Marissa often conducts discovery research to understand the broader problem space and the environment in which users interact with a product.
+
+Discovery research helps reveal user motivations, workflows, and pain points that shape the direction of design solutions.
+
+Methods commonly used include:
+
+- stakeholder interviews  
+- user interviews  
+- product walkthroughs  
+- competitor and market analysis  
+- current-state product evaluations  
+
+These insights help teams frame the right problems and identify opportunities for meaningful improvement.
+
+---
+
+## Usability Testing
+
+Usability testing allows Marissa to observe how users interact with a product and evaluate how effectively they can complete key tasks.
+
+Through usability testing she identifies friction points, misunderstandings, and interaction challenges that may not be visible through analytics alone.
+
+Typical usability testing activities include:
+
+- task-based usability testing  
+- moderated user sessions  
+- testing prototypes and existing interfaces  
+- evaluating task completion challenges  
+
+These insights help validate design decisions and ensure complex workflows remain understandable and efficient.
+
+---
+
+## Behavioral Data and Product Analytics
+
+Understanding real user behavior often requires analyzing quantitative product data.
+
+Marissa frequently reviews analytics and behavioral metrics to identify patterns such as:
+
+- feature adoption trends  
+- user drop-off points in workflows  
+- navigation behavior across product areas  
+- engagement and usage patterns  
+
+Combining analytics with qualitative insights allows teams to identify high-impact opportunities for product improvement.
+
+---
+
+## Heuristic Evaluation
+
+Heuristic evaluation involves reviewing products against established usability principles to quickly identify potential issues.
+
+Marissa uses heuristic analysis to evaluate areas such as:
+
+- navigation clarity  
+- interaction consistency  
+- system feedback and visibility  
+- information hierarchy  
+
+This method helps identify usability issues early and provides a structured way to improve product experiences before formal testing.
+
+---
+
+## Accessibility Reviews
+
+Accessibility research ensures digital products remain usable for people with diverse abilities and needs.
+
+Marissa frequently conducts accessibility-focused reviews that evaluate:
+
+- readability and visual hierarchy  
+- color contrast and interface clarity  
+- navigation structure  
+- interaction patterns and usability  
+
+These reviews help ensure products remain inclusive and accessible across a wide range of users and contexts.
+
+---
+
+## Customer Support and Feedback Analysis
+
+Customer support and feedback data often reveal recurring usability issues that may not surface during structured research sessions.
+
+Marissa analyzes support logs and user feedback to identify patterns such as:
+
+- frequently asked questions  
+- recurring usability challenges  
+- common user frustrations  
+
+These insights help teams prioritize improvements that directly impact the user experience.
+
+---
+
+## Journey Mapping and Experience Mapping
+
+Understanding the broader context of a product often requires mapping the full user journey.
+
+Marissa frequently creates journey maps and experience maps that illustrate how users move through different stages of a product or service experience.
+
+These maps help teams understand:
+
+- key user goals and motivations  
+- emotional friction points  
+- system touchpoints and dependencies  
+- opportunities for product improvement  
+
+Journey mapping is particularly valuable in complex systems involving multiple workflows or stakeholders.
+
+---
+
+## Synthesizing Research Into Product Insights
+
+Research is most valuable when it translates into clear product direction.
+
+Marissa synthesizes research findings by:
+
+- identifying patterns across multiple research sources  
+- highlighting usability challenges and behavioral insights  
+- mapping opportunities for product improvement  
+- translating insights into actionable design direction  
+
+This process allows teams to move from raw research data to confident product decisions.
+
+---
+
+## Questions this file helps answer
+
+- What user research methods does Marissa Chaplinsky use?  
+- How does Marissa conduct UX research?  
+- Does Marissa use analytics and behavioral data in research?  
+- How does Marissa validate design decisions?  
+- What role does research play in Marissa’s design process?  
+- Does Marissa conduct usability testing and accessibility reviews?
