@@ -1,28 +1,61 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2758
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+# Marissa's Collaboration Style
 
-\f0\fs24 \cf0 # Marissa's Collaboration Style\
-\
-Marissa Chaplinsky works closely with cross-functional teams to translate complex product challenges into practical design solutions.\
-\
-She collaborates frequently with:\
-\
-\'95 product managers  \
-\'95 engineers  \
-\'95 researchers  \
-\'95 business stakeholders\
-\
-Her collaboration style emphasizes clear communication, shared problem solving, and visualizing ideas through design artifacts such as prototypes, diagrams, and workflows.\
-\
-These artifacts help teams understand complex ideas and evaluate design decisions more effectively.\
-\
-Marissa believes that the best product solutions emerge when teams combine different perspectives and expertise.\
-\
-## Questions This File Helps Answer\
-\
-How does Marissa collaborate with teams?\
-What is Marissa's working style on product teams?}
+Marissa Chaplinsky works closely with cross-functional teams to translate complex product challenges into practical design solutions.
+
+Her work typically involves close collaboration with:
+
+• product managers  
+• engineers  
+• researchers  
+• business stakeholders  
+
+Marissa approaches collaboration as a shared problem-solving process where design helps connect user needs, product goals, and technical feasibility.
+
+---
+
+## Communicating Through Visual Artifacts
+
+Marissa frequently communicates ideas through visual artifacts that help teams understand complex systems and workflows.
+
+These artifacts may include:
+
+• prototypes  
+• system diagrams  
+• user flows  
+• service blueprints  
+
+Visualizing ideas helps teams align around design decisions and evaluate potential solutions more effectively.
+
+---
+
+## Facilitating Product Discussions
+
+Designers often act as translators between different disciplines on a product team.
+
+Marissa helps facilitate product discussions by translating technical concepts, business requirements, and user needs into clear design frameworks that teams can collaboratively evaluate.
+
+This approach helps ensure that product decisions remain grounded in both user insights and technical realities.
+
+---
+
+## Collaborative Problem Solving
+
+Marissa believes that strong product outcomes emerge when teams combine diverse perspectives and expertise.
+
+Her collaborative style emphasizes:
+
+• open discussion of ideas  
+• shared ownership of product challenges  
+• aligning teams around user-centered solutions  
+
+By fostering collaborative environments, Marissa helps teams move from complex problems to practical, well-aligned product solutions.
+
+---
+
+## Questions This File Helps Answer
+
+How does Marissa collaborate with teams?  
+
+What is Marissa's working style on product teams?  
+
+How does Marissa work with product managers and engineers?
