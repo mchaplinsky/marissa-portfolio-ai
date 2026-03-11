@@ -1,17 +1,29 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2758
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+# Knowledge Base Index
 
-\f0\fs24 \cf0 Core sections:\
-\
-About Marissa\
-Skills and expertise\
-Tools and technology\
-Industry experience\
-Projects\
-AI design systems\
-Design process\
-Recruiter questions}
+This document provides a high-level overview of the sections included in Marissa Chaplinsky’s AI portfolio knowledge base.
+
+## Core Sections
+
+### About Marissa
+Background information about Marissa’s career, design philosophy, and professional identity.
+
+### Skills and Expertise
+Detailed descriptions of Marissa’s UX, product design, AI design, and systems thinking capabilities.
+
+### Tools and Technology
+Tools used across design, research, prototyping, collaboration, analytics, and AI development.
+
+### Industry Experience
+Projects and work experience across multiple industries including healthcare, government, enterprise software, and education technology.
+
+### Projects
+Detailed documentation of key projects including product strategy, design decisions, collaboration, and impact.
+
+### AI Design Systems
+Documentation of Marissa’s experience designing AI-powered products, including behavior design, guardrails, explainability, and human-in-the-loop systems.
+
+### Design Process
+Explanation of Marissa’s design methodology including research, journey mapping, service blueprinting, prototyping, testing, and iteration.
+
+### Recruiter and Hiring Questions
+Pre-written answers to common recruiter and hiring manager questions about Marissa’s experience, strengths, leadership, and project work.
