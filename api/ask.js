@@ -32,6 +32,24 @@ function extractJson(text) {
   return null;
 }
 
+function normalizeFormat(format, fallbackAnswer = "") {
+  if (!format || typeof format !== "object") {
+    return {
+      intro: fallbackAnswer || "",
+      bullets: [],
+      closing: "",
+    };
+  }
+
+  return {
+    intro: typeof format.intro === "string" ? format.intro : fallbackAnswer || "",
+    bullets: Array.isArray(format.bullets)
+      ? format.bullets.filter((item) => typeof item === "string").slice(0, 6)
+      : [],
+    closing: typeof format.closing === "string" ? format.closing : "",
+  };
+}
+
 export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
@@ -88,14 +106,27 @@ Do not add any text before or after the JSON.
 Use exactly this shape:
 {
   "answer": "string",
+  "format": {
+    "intro": "string",
+    "bullets": ["string", "string", "string"],
+    "closing": "string"
+  },
   "suggestedQuestions": ["string", "string", "string"]
 }
 
+Formatting rules:
+- "answer" should be the full plain-language answer
+- "format.intro" should be a short opening sentence when helpful
+- "format.bullets" should contain the main scannable points when the answer has multiple ideas
+- "format.closing" should be a short wrap-up sentence only if needed
+- prefer bullets for experience, projects, skills, industries, strengths, process, and collaboration
+- use a short paragraph only when the answer is naturally brief
+- keep bullets concise and easy to scan
+- do not invent facts outside the portfolio knowledge base
+
 Rules:
-- "answer" must be a plain string
 - "suggestedQuestions" must contain exactly 3 short follow-up questions
 - each suggested question should be relevant to the user's last question
-- do not invent facts outside the portfolio knowledge base
 
 Portfolio Knowledge Base:
 ${portfolioContext}
@@ -108,25 +139,36 @@ ${portfolioContext}
       ],
     });
 
-    const rawText =
-      response.output_text || "";
-
+    const rawText = response.output_text || "";
     const parsed = extractJson(rawText);
 
     if (!parsed) {
+      const fallbackAnswer =
+        rawText || "Sorry, I couldn't generate a response.";
+
       return res.status(200).json({
-        answer: rawText || "Sorry, I couldn't generate a response.",
+        answer: fallbackAnswer,
+        format: {
+          intro: fallbackAnswer,
+          bullets: [],
+          closing: "",
+        },
         suggestedQuestions: [],
       });
     }
 
+    const safeAnswer =
+      typeof parsed.answer === "string" && parsed.answer.trim()
+        ? parsed.answer
+        : "Sorry, I couldn't generate a response.";
+
     return res.status(200).json({
-      answer:
-        typeof parsed.answer === "string"
-          ? parsed.answer
-          : "Sorry, I couldn't generate a response.",
+      answer: safeAnswer,
+      format: normalizeFormat(parsed.format, safeAnswer),
       suggestedQuestions: Array.isArray(parsed.suggestedQuestions)
-        ? parsed.suggestedQuestions.slice(0, 3)
+        ? parsed.suggestedQuestions
+            .filter((item) => typeof item === "string")
+            .slice(0, 3)
         : [],
     });
   } catch (error) {
