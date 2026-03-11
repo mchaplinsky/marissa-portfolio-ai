@@ -1,26 +1,66 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2758
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+# Tell Me About Marissa
 
-\f0\fs24 \cf0 # Why Hire Marissa\
-\
-Marissa Chaplinsky brings a combination of product design expertise, systems thinking, and emerging technology experience that allows her to solve complex product challenges.\
-\
-She has designed platforms across multiple industries including healthcare, government services, enterprise software, and education technology. These environments often involve complicated workflows, multiple user roles, and operational constraints that require thoughtful design solutions.\
-\
-One of Marissa\'92s strengths is her ability to understand complex systems and translate them into intuitive user experiences. She frequently works on products that support both external users and internal teams, helping organizations improve efficiency while delivering better experiences.\
-\
-Marissa also brings experience designing AI-powered products that assist users through automation and intelligent recommendations. She approaches AI design responsibly by incorporating transparency, guardrails, and human oversight into system behavior.\
-\
-Beyond individual features, Marissa contributes to broader product thinking by helping teams define workflows, align design decisions with product strategy, and evaluate how design improvements affect real-world outcomes.\
-\
-Organizations hire Marissa when they need a designer who can move fluidly between research, strategy, system design, and interface execution while collaborating effectively with cross-functional teams.\
-\
-## Questions This File Helps Answer\
-\
-Why should a company hire Marissa?\
-What value does Marissa bring to a product team?\
-What makes Marissa a strong product designer?}
+Marissa Chaplinsky is a Senior Product Designer who specializes in designing complex digital systems that combine user experience, product strategy, and emerging technologies such as artificial intelligence.
+
+Her work spans multiple industries including healthcare, government services, enterprise software, and education technology. Across these environments she has designed platforms used by large and diverse audiences including administrators, healthcare professionals, government staff, and everyday consumers.
+
+---
+
+## Systems-Focused Product Design
+
+Marissa approaches design as both a strategic and systems-oriented discipline. She focuses on understanding how products operate within broader organizational environments while ensuring that user experiences remain intuitive, accessible, and scalable.
+
+Her experience includes designing:
+
+• case management systems  
+• enterprise service platforms  
+• healthcare portals  
+• AI-powered creative tools  
+
+Many of these projects involved navigating complex workflows, multi-role user environments, and operational constraints.
+
+---
+
+## AI-Assisted Product Experiences
+
+More recently, Marissa has focused on designing AI-assisted product experiences that help users complete complex tasks through automation, intelligent suggestions, and guided workflows.
+
+Her work emphasizes:
+
+• human–AI collaboration  
+• transparent system behavior  
+• guardrails and fallback states  
+• maintaining user control within automated systems  
+
+These principles ensure that AI features support user workflows while preserving clarity, reliability, and creative control.
+
+---
+
+## Cross-Functional Product Collaboration
+
+Throughout her career, Marissa has worked closely with product managers, engineers, and organizational stakeholders to translate complex ideas into practical product experiences.
+
+She is particularly skilled at connecting:
+
+• research insights  
+• product strategy  
+• system behavior  
+• interface design  
+
+into cohesive and scalable product solutions.
+
+---
+
+## Design Philosophy
+
+Marissa’s goal as a designer is to create products that simplify complexity, empower users, and help organizations deliver meaningful services more effectively.
+
+---
+
+## Questions This File Helps Answer
+
+Who is Marissa Chaplinsky?  
+
+What kind of designer is Marissa?  
+
+What industries has Marissa worked in?
