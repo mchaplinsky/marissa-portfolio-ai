@@ -1,15 +1,4 @@
-export type Project = {
-    id: string
-    title: string
-    description: string
-    metric: string
-    tags: string[]
-    image: string
-    url: string
-    keywords: string[]
-}
-
-export const projects: Project[] = [
+export const projects = [
     {
         id: "treering-ai-layout",
         title: "AI Powered Yearbook Creation System For TreeRing",
@@ -39,7 +28,6 @@ export const projects: Project[] = [
             "responsive pages",
         ],
     },
-
     {
         id: "ai-portfolio-assistant",
         title: "AI Powered Portfolio Assistant",
@@ -65,7 +53,6 @@ export const projects: Project[] = [
             "question answering",
         ],
     },
-
     {
         id: "healthcare-portal",
         title: "Healthcare Patient Portal Redesign",
@@ -91,7 +78,6 @@ export const projects: Project[] = [
             "health ux",
         ],
     },
-
     {
         id: "mental-health-platform",
         title: "Mental Health Resource Platform",
@@ -116,7 +102,6 @@ export const projects: Project[] = [
             "discoverability",
         ],
     },
-
     {
         id: "ab-testing-platform",
         title: "Experimentation & A/B Testing Platform",
@@ -142,7 +127,6 @@ export const projects: Project[] = [
             "analytics",
         ],
     },
-
     {
         id: "government-service-portal",
         title: "Government Service Portal Redesign",
@@ -168,7 +152,6 @@ export const projects: Project[] = [
             "ia",
         ],
     },
-
     {
         id: "design-systems-enterprise-workflows",
         title: "Enterprise Workflow & Systems Design",
