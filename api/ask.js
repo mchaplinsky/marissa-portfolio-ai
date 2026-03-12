@@ -1,5 +1,6 @@
 import OpenAI from "openai";
 import { getPortfolioContext } from "../portfolioContext.js";
+import { matchProjects } from "../matchProjects.js";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -42,7 +43,8 @@ function normalizeFormat(format, fallbackAnswer = "") {
   }
 
   return {
-    intro: typeof format.intro === "string" ? format.intro : fallbackAnswer || "",
+    intro:
+      typeof format.intro === "string" ? format.intro : fallbackAnswer || "",
     bullets: Array.isArray(format.bullets)
       ? format.bullets.filter((item) => typeof item === "string").slice(0, 6)
       : [],
@@ -71,6 +73,7 @@ export default async function handler(req, res) {
     }
 
     const portfolioContext = getPortfolioContext();
+    const relatedProjects = matchProjects(question);
 
     const response = await openai.responses.create({
       model: "gpt-4.1-mini",
@@ -154,6 +157,7 @@ ${portfolioContext}
           closing: "",
         },
         suggestedQuestions: [],
+        relatedProjects,
       });
     }
 
@@ -170,6 +174,7 @@ ${portfolioContext}
             .filter((item) => typeof item === "string")
             .slice(0, 3)
         : [],
+      relatedProjects,
     });
   } catch (error) {
     console.error("Ask API error:", error);
