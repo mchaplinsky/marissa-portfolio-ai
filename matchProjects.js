@@ -77,45 +77,19 @@ function scoreProject(project, question) {
     return score
 }
 
-export function matchProjects(question, limit = 2) {
-    const normalizedQuestion = normalizeText(question)
+function dedupeProjects(list) {
+    const seen = new Set()
 
-    const scoredProjects = projects.map((project) => ({
-        ...project,
-        score: scoreProject(project, normalizedQuestion),
-    }))
-
-    const matchedProjects = scoredProjects
-        .filter((project) => project.score > 0)
-        .sort((a, b) => b.score - a.score)
-        .slice(0, limit)
-        .map(({ score, ...project }) => project)
-
-    if (matchedProjects.length >= limit) {
-        return matchedProjects
-    }
-
-    const fallbackProjects = getFallbackProjects(normalizedQuestion, limit)
-
-    const combined = [...matchedProjects]
-
-    for (const fallbackProject of fallbackProjects) {
-        const alreadyIncluded = combined.some(
-            (project) => project.id === fallbackProject.id
-        )
-
-        if (!alreadyIncluded) {
-            combined.push(fallbackProject)
-        }
-
-        if (combined.length >= limit) break
-    }
-
-    return combined.slice(0, limit)
+    return list.filter((project) => {
+        if (!project || !project.id) return false
+        if (seen.has(project.id)) return false
+        seen.add(project.id)
+        return true
+    })
 }
 
-function getFallbackProjects(question, limit = 2) {
-    const fallbackIds = []
+function getFallbackProjects(question) {
+    let fallbackIds = []
 
     if (
         question.includes("healthcare") ||
@@ -123,37 +97,64 @@ function getFallbackProjects(question, limit = 2) {
         question.includes("medical") ||
         question.includes("accessibility")
     ) {
-        fallbackIds.push("healthcare-portal", "mental-health-platform")
+        fallbackIds = ["healthcare-portal", "mental-health-platform"]
     } else if (
         question.includes("ai") ||
         question.includes("agentic") ||
         question.includes("automation") ||
         question.includes("chat")
     ) {
-        fallbackIds.push("treering-ai-layout", "ai-portfolio-assistant")
+        fallbackIds = ["treering-ai-layout", "ai-portfolio-assistant"]
     } else if (
         question.includes("strategy") ||
         question.includes("testing") ||
         question.includes("analytics") ||
         question.includes("growth")
     ) {
-        fallbackIds.push("ab-testing-platform", "ai-portfolio-assistant")
+        fallbackIds = ["ab-testing-platform", "ai-portfolio-assistant"]
     } else if (
         question.includes("enterprise") ||
         question.includes("workflow") ||
         question.includes("system") ||
         question.includes("process")
     ) {
-        fallbackIds.push(
+        fallbackIds = [
             "design-systems-enterprise-workflows",
-            "government-service-portal"
-        )
+            "government-service-portal",
+        ]
     } else {
-        fallbackIds.push("treering-ai-layout", "healthcare-portal")
+        fallbackIds = ["treering-ai-layout", "healthcare-portal"]
     }
 
-    return fallbackIds
-        .map((id) => projects.find((project) => project.id === id))
-        .filter(Boolean)
-        .slice(0, limit)
+    return dedupeProjects(
+        fallbackIds.map((id) => projects.find((project) => project.id === id))
+    )
+}
+
+export function matchProjects(question, limit = 2) {
+    const normalizedQuestion = normalizeText(question)
+
+    const scoredProjects = projects
+        .map((project) => ({
+            project,
+            score: scoreProject(project, normalizedQuestion),
+        }))
+        .filter((entry) => entry.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .map((entry) => entry.project)
+
+    const uniqueMatchedProjects = dedupeProjects(scoredProjects)
+
+    if (uniqueMatchedProjects.length >= limit) {
+        return uniqueMatchedProjects.slice(0, limit)
+    }
+
+    const fallbackProjects = getFallbackProjects(normalizedQuestion)
+
+    const combined = dedupeProjects([
+        ...uniqueMatchedProjects,
+        ...fallbackProjects,
+    ])
+
+    return combined.slice(0, limit)
 }
