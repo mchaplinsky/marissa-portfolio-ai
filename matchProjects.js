@@ -1,4 +1,4 @@
-import { projects } from "./projects"
+import { projects } from "./projects.js"
 
 function normalizeText(value = "") {
     return String(value).toLowerCase().trim()
