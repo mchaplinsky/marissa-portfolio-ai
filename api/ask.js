@@ -73,7 +73,6 @@ export default async function handler(req, res) {
     }
 
     const portfolioContext = getPortfolioContext();
-    const relatedProjects = matchProjects(question);
 
     const response = await openai.responses.create({
       model: "gpt-4.1-mini",
@@ -157,7 +156,7 @@ ${portfolioContext}
           closing: "",
         },
         suggestedQuestions: [],
-        relatedProjects,
+        relatedProjects: matchProjects(question, fallbackAnswer, 2),
       });
     }
 
@@ -174,7 +173,7 @@ ${portfolioContext}
             .filter((item) => typeof item === "string")
             .slice(0, 3)
         : [],
-      relatedProjects,
+      relatedProjects: matchProjects(question, safeAnswer, 2),
     });
   } catch (error) {
     console.error("Ask API error:", error);
